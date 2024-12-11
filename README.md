@@ -2,7 +2,7 @@
 
 This is a website helping people to find and watch quality trending movies
 
-See project outcome: teaser-time.vercel.app
+See project outcome: https://teaser-time.vercel.app/
 
 ![image](https://user-images.githubusercontent.com/78266241/144077285-fad99340-7ca6-4fa1-be1e-4142543608cc.png)
 
