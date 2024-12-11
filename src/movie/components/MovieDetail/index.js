@@ -6,9 +6,11 @@ import { addBookmark } from '../../../../api/firebase.js';
 import useAuth from '../../../../hooks/useAuth.js';
 import { MOVIE_IMAGE_BASE_URL } from '../../../../config/index.js';
 
+const LIMIT_SHOW_CAST = 3;
+
 function MovieDetail({ movieDetail, movieCredit, movieId }) {
   const { user } = useAuth();
-  const [cast1, cast2, cast3] = movieCredit.cast;
+  const castList = (movieCredit?.cast || []).slice(0, LIMIT_SHOW_CAST);
   const company = movieDetail.production_companies[0];
 
   const handleClickAddBookmark = async () => {
@@ -98,44 +100,24 @@ function MovieDetail({ movieDetail, movieCredit, movieId }) {
           </div>
           <div className={styles.descript}>{movieDetail.overview}</div>
           <div className={styles.section}>
-            <p className={styles.sectionTitle}>Main actors</p>
+            <p className={styles.sectionTitle}>Main actor</p>
             <div className={styles.list}>
-              <div className={styles.content}>
-                <Image
-                  layout="fixed"
-                  className={styles.actorImg}
-                  src={`${MOVIE_IMAGE_BASE_URL}${cast1.profile_path}`}
-                  width={120}
-                  height={120}
-                  alt={`#`}
-                />
-                <p className={styles.actorName}> {cast1?.name}</p>
-                <p className={styles.subName}> {cast1?.character} </p>
-              </div>
-              <div className={styles.content}>
-                <Image
-                  layout="fixed"
-                  className={styles.actorImg}
-                  src={`${MOVIE_IMAGE_BASE_URL}${cast2.profile_path}`}
-                  width={120}
-                  height={120}
-                  alt={`#`}
-                />
-                <p className={styles.actorName}> {cast2?.name}</p>
-                <p className={styles.subName}> {cast2?.character}</p>
-              </div>
-              <div className={styles.content}>
-                <Image
-                  layout="fixed"
-                  className={styles.actorImg}
-                  src={`${MOVIE_IMAGE_BASE_URL}${cast3.profile_path}`}
-                  width={120}
-                  height={120}
-                  alt={`#`}
-                />
-                <p className={styles.actorName}> {cast3?.name} </p>
-                <p className={styles.subName}> {cast3?.character}</p>
-              </div>
+              {castList.map((cast) => {
+                return (
+                  <div className={styles.content} key={cast?.name}>
+                    <Image
+                      layout="fixed"
+                      className={styles.actorImg}
+                      src={`${MOVIE_IMAGE_BASE_URL}${cast?.profile_path}`}
+                      width={120}
+                      height={120}
+                      alt={`cast-image`}
+                    />
+                    <p className={styles.actorName}> {cast?.name}</p>
+                    <p className={styles.subName}> {cast?.character} </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

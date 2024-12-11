@@ -1,10 +1,5 @@
-import MoviePlaying from '../../../src/watch/components/MoviePlaying';
-import MovieDescription from '../../../src/watch/components/MovieDescription';
-import MovieRalated from '../../../src/watch/components/MovieRelated';
-import MovieActor from '../../../src/watch/components/MovieActor';
-
+import WatchMovie from '../../../src/watch';
 import { getCredit, getDetail, getSimilar, getVideo } from '../../../api/movie';
-import PageLayout from '../../../components/PageLayout';
 
 export async function getServerSideProps(context) {
   const movieId = context.query.m;
@@ -40,16 +35,12 @@ const WatchMoviePage = ({
   movieSimilars,
 }) => {
   return (
-    <PageLayout>
-      <MoviePlaying movieVideos={movieVideos} />
-      <MovieDescription
-        movieVideos={movieVideos}
-        movieDetail={movieDetail}
-        movieActors={movieActors}
-      />
-      <MovieRalated movieSimilars={movieSimilars} />
-      <MovieActor movieActors={movieActors} />
-    </PageLayout>
+    <WatchMovie
+      movieDetail={movieDetail}
+      movieActors={movieActors}
+      movieVideos={movieVideos}
+      movieSimilars={movieSimilars}
+    />
   );
 };
 

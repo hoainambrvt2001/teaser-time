@@ -1,12 +1,7 @@
-import LoginForm from '../../src/login/components/LoginForm';
-import PageLayout from '../../components/PageLayout';
+import Login from '../../src/login';
 
 const LoginPage = () => {
-  return (
-    <PageLayout isHiddenNav={true}>
-      <LoginForm />
-    </PageLayout>
-  );
+  return <Login />;
 };
 
 export default LoginPage;

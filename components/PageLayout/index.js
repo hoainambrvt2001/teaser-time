@@ -13,6 +13,12 @@ const PageLayout = ({ isHiddenNav = false, children }) => {
           name="description"
           content="Welcome to the Teaser Time - an storage of many interesting movies with all genres from around the world. This will bring you to an amazing experience movie watching"
         />
+        <link
+          rel="icon"
+          href="/teaser-time-logo.png"
+          sizes="8x16"
+          type="image/png"
+        />
       </Head>
       <div className={classes.layout}>
         <Header isHiddenNav={isHiddenNav} />

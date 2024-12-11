@@ -1,6 +1,5 @@
-import SearchBar from '../../src/search/components/SearchBar';
 import { getDetail, search } from '../../api/movie';
-import PageLayout from '../../components/PageLayout';
+import Search from '../../src/search';
 
 export async function getServerSideProps(context) {
   const searchStr = context.query.s;
@@ -33,11 +32,7 @@ export async function getServerSideProps(context) {
 }
 
 const SearchPage = ({ results }) => {
-  return (
-    <PageLayout>
-      <SearchBar results={results} />
-    </PageLayout>
-  );
+  return <Search results={results} />;
 };
 
 export default SearchPage;

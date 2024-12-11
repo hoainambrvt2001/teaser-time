@@ -39,8 +39,6 @@ const FilterBar = () => {
   });
   const router = useRouter();
 
-  console.log('rerendering');
-
   useEffect(() => {
     let queryString = '';
     if (filterValue.genre) {
