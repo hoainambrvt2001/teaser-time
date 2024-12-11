@@ -1,0 +1,60 @@
+@import "../../styles/responsive.scss";
+
+.SectionWrapper {
+    overflow-x: hidden;
+    z-index: 0;
+    width: 100%;
+    margin: 0 auto;
+    height: 16rem;
+    position: absolute;
+    bottom: 0;
+    filter: brightness(1.1);
+
+    @include laptop {
+        height: 20rem;
+    }
+
+    .bgimg {
+        width: 100%;
+        opacity: 0.4;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(3);
+    }
+
+    .content {
+        margin: auto;
+        color: rgb(211, 211, 211);
+        padding: 1rem;
+        position: absolute;
+        font-size: 1rem;
+        @include mobile {
+            top: 10px;
+            font-size: 10px;
+            width: 100%;
+            margin: auto;
+            left: 1.25rem;
+            padding: 1rem;
+        }
+        @include tablet {
+            top: 1rem;
+            font-size: 0.75rem;
+            width: 100%;
+            padding: 2rem;
+            margin: auto;
+            left: 2.25rem;
+        }
+        @include laptop {
+            top: 1rem;
+            font-size: 1rem;
+            width: 90%;
+            padding: 2rem;
+            margin: auto;
+            left: 5rem;
+        }
+
+        .li {
+            margin-top: 12px;
+        }
+    }
+}

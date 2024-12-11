@@ -1,0 +1,19 @@
+@import "../../../../styles/responsive.scss";
+
+.LoginField {
+  padding: 48px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+  margin: auto;
+  margin-top: 200px;
+  background-color: #2525259f;
+  border-radius: 12px;
+  width: 400px;
+  h1 {
+    color: #ffffff;
+    margin: auto;
+    margin-bottom: 24px;
+  }
+}

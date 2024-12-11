@@ -1,0 +1,16 @@
+.SectionWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+
+  .ComponentWrapper {
+    margin: 0 10px;
+
+    h3 {
+      color: white;
+    }
+  }
+}

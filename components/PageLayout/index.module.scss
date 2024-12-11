@@ -1,0 +1,14 @@
+@import "../../styles/responsive.scss";
+
+.layout {
+    position: relative;
+    min-height: 100vh;
+    .contentWrapper {
+        padding-bottom: 16rem;
+    }
+    @include laptop {
+        .contentWrapper {
+            padding-bottom: 20rem;
+        }
+    }
+}
