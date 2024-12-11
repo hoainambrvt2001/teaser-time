@@ -6,7 +6,15 @@
   height: 70vh;
   display: flex;
   justify-content: center;
-  margin-bottom: 100vh;
+  margin-bottom: 160vh;
+
+  @include tablet {
+    margin-bottom: 110vh;
+  }
+
+  @include laptop {
+    margin-bottom: 70vh;
+  }
 }
 
 .container .bgimg {
@@ -19,13 +27,19 @@
 .detail {
   top: 12rem;
   width: 80%;
-  padding: 1rem 3rem;
+  padding: 2rem;
   margin: auto;
   height: auto;
   position: absolute;
   display: flex;
   flex-flow: col nowrap;
   justify-content: space-between;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+
+  @include laptop {
+    padding: 3rem;
+  }
 }
 
 .detail .poster {
@@ -42,11 +56,12 @@
   height: auto;
   max-width: 100%;
   width: 100%;
+  border-radius: 5px;
 }
 
 .detail .btn {
   margin-top: 1rem;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
   width: 100%;
@@ -69,6 +84,7 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   padding: 0px 0px 0px 32px;
+  flex-grow: 1;
 }
 
 .detail .info h1 {
@@ -109,14 +125,18 @@
   background: linear-gradient(90deg, #252728 0, #3f4143);
   border-radius: 4px;
   height: 2.5rem;
-  min-width: 10rem;
+  min-width: 6rem;
   padding: 8px;
   margin-right: 10px;
   margin-bottom: 10px;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: white;
   cursor: pointer;
+
+  @include laptop {
+    min-width: 10rem;
+  }
 }
 
 .detail .info .cate .tag:hover {
@@ -124,7 +144,7 @@
 }
 
 .detail .info .originName {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: white;
   margin-bottom: 8px;
   font-weight: 500;
@@ -152,6 +172,12 @@
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  flex-direction: column;
+  align-items: center;
+
+  @include laptop {
+    flex-direction: row;
+  }
 }
 
 .detail .info .list .content {
@@ -248,7 +274,7 @@
   }
   .detail {
     top: 6rem;
-    padding: 0rem;
+    padding: 2rem;
     align-items: center;
   }
   .detail .poster {
@@ -261,8 +287,8 @@
   }
   .detail .btn {
     height: 2.2rem;
-    font-size: 10px;
-    width: 90%;
+    font-size: 0.8rem;
+    width: 100%;
   }
   .detail {
     display: flex;

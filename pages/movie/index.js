@@ -1,8 +1,5 @@
-import { withRouter } from 'next/router';
-
-import MovieDetail from '../../src/movie/components/MovieDetail';
+import Movie from '../../src/movie';
 import { getCredit, getDetail } from '../../api/movie';
-import PageLayout from '../../components/PageLayout';
 
 export async function getServerSideProps(context) {
   const movieId = context.query.m;
@@ -25,14 +22,12 @@ export async function getServerSideProps(context) {
 
 const MoviePage = ({ movieDetail, movieCredit, movieId }) => {
   return (
-    <PageLayout>
-      <MovieDetail
-        movieDetail={movieDetail}
-        movieCredit={movieCredit}
-        movieId={movieId}
-      />
-    </PageLayout>
+    <Movie
+      movieDetail={movieDetail}
+      movieCredit={movieCredit}
+      movieId={movieId}
+    />
   );
 };
 
-export default withRouter(MoviePage);
+export default MoviePage;

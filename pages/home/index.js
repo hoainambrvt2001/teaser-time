@@ -1,7 +1,5 @@
-import FilterMovie from '../../src/home/components/FilterMovie';
-import FilterBar from '../../src/home/components/FilterBar';
 import { filter } from '../../api/movie';
-import PageLayout from '../../components/PageLayout';
+import Home from '../../src/home';
 
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
@@ -23,14 +21,7 @@ export async function getServerSideProps(context) {
 }
 
 const HomePage = ({ filterMovieData }) => {
-  return (
-    <>
-      <PageLayout>
-        <FilterBar />
-        <FilterMovie filterMovieData={filterMovieData.results} />
-      </PageLayout>
-    </>
-  );
+  return <Home filterMovieData={filterMovieData} />;
 };
 
 export default HomePage;

@@ -67,7 +67,6 @@
     line-height: 1.5;
     position: relative;
     vertical-align: top;
-    cursor: pointer;
     justify-content: center;
     padding: 7px 16px;
     text-align: center;
@@ -75,6 +74,11 @@
     background-color: #ff6500;
     border-color: transparent;
     color: #fff;
+    cursor: pointer;
+  }
+
+  .signButton {
+    font-weight: 500;
   }
     
   .header .headerWrap .headerTitle {

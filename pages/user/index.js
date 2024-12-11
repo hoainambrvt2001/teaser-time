@@ -1,16 +1,7 @@
-// * Libs:
-import { withRouter } from 'next/router';
-
-// * Sub Components:
-import UserProfile from '../../src/user/components/UserProfile';
-import PageLayout from '../../components/PageLayout';
+import User from '../../src/user';
 
 function UserProfilePage() {
-  return (
-    <PageLayout>
-      <UserProfile />
-    </PageLayout>
-  );
+  return <User />;
 }
 
-export default withRouter(UserProfilePage);
+export default UserProfilePage;
