@@ -87,6 +87,10 @@
     flex-grow: 0;
     flex-shrink: 0;
     font-size: 1rem;
+
+    :hover {
+      color: #ff6500;
+    }
   }
   
   .header .headerWrap .headerTitle svg {

@@ -38,8 +38,8 @@ function Header({ isHiddenNav = false }) {
               <Image
                 src="/teaser-time-logo.png"
                 alt="logo-image"
-                height={30}
-                width={60}
+                height={35}
+                width={70}
               />
             </a>
           </Link>
@@ -77,8 +77,8 @@ function Header({ isHiddenNav = false }) {
               <Image
                 src="/teaser-time-logo.png"
                 alt="logo-image"
-                height={30}
-                width={60}
+                height={35}
+                width={70}
               />
             </a>
           </Link>
